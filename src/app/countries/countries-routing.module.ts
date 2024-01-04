@@ -19,6 +19,10 @@ const routes: Routes=[
     component: ByRegionPageComponent
   },
   {
+    path:'**',
+    redirectTo: 'by-capital'
+  },
+  {
     path:'by/:id',
     component: CountryPageComponent
   }
