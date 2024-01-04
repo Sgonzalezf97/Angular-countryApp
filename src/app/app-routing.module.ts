@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'contact', component: ContactPageComponent
   },
   {
+    path:'countries',
+    loadChildren:() => import('./countries/countries.module').then(module => module.CountriesModule)
+  },
+  {
     path: '**', redirectTo: ''
   },
 
