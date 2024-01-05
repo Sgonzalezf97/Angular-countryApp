@@ -10,6 +10,9 @@ import { Country } from '../../interfaces/country';
   styles: ``
 })
 export class CountryPageComponent implements OnInit {
+
+  public countryObject?: Country;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -24,7 +27,8 @@ export class CountryPageComponent implements OnInit {
         if (!country) {
           return this.router.navigateByUrl('')
         }
-        console.log("tenemos un país");
+        this.countryObject = country;
+        console.log(country)
         return;
       });
   }

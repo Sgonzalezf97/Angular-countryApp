@@ -1,1 +1,48 @@
-<p>country-page works!</p>
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor
+  </div>
+</ng-template>
+
+<div *ngIf="countryObject; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2>
+        País: <strong>{{countryObject.name.common}}</strong>
+      </h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="countryObject.flags.svg" [alt]="countryObject.name.common" class="img-thumbnail">
+    </div>
+    <div class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Población: {{countryObject.population | number}}</strong>
+        </li>
+        <li class="list-group-item">
+          <strong>Código: {{countryObject.cca3 }}</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Traducciones</h3>
+      <div class="d-flex flex-wrap">
+        <span class="badge bg-primary m-1">{{countryObject.translations['ara']?.common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['spa']?.common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['jpn']?.common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['fra']?.common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['ita']?.common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['zho']?.common}}</span>
+      </div>
+    </div>
+  </div>
+</div>
