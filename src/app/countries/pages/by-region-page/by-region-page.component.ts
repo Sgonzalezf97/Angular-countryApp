@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Country } from '../../interfaces/country';
+import { Region } from '../../interfaces/region.type';
 import { CountriesService } from '../../services/countries.service';
-
-type Region = 'Americas'|'Africa'|'Asia'|'Europe'|'Oceania';
 
 @Component({
   selector: 'app-by-region-page',
@@ -10,10 +9,9 @@ type Region = 'Americas'|'Africa'|'Asia'|'Europe'|'Oceania';
   styles: ``
 })
 export class ByRegionPageComponent {
+
   public countries :Country[]=[];
-
   public regions: Region[] = ['Americas','Africa','Asia','Europe','Oceania']
-
   public selectedRegion?: Region;
 
   constructor (private countriesService:CountriesService ){}
