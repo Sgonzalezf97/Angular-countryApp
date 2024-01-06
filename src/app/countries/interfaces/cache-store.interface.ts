@@ -8,7 +8,7 @@ export interface CacheStore{
 }
 
 export interface TermCountries{
-  term: String;
+  term: string;
   countries: Country[];
 }
 
