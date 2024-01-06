@@ -28,6 +28,15 @@
         <li class="list-group-item">
           <strong>Código: {{countryObject.cca3 }}</strong>
         </li>
+        <li class="list-group-item">
+          <strong>Area: {{countryObject.area | number }} km<sup>2</sup></strong>
+        </li>
+        <li class="list-group-item">
+          <strong>Capitál: {{countryObject.capital }}</strong>
+        </li>
+        <li class="list-group-item">
+          <strong>Región: {{countryObject.continents }}</strong>
+        </li>
       </ul>
     </div>
   </div>
@@ -36,12 +45,12 @@
     <div class="col">
       <h3>Traducciones</h3>
       <div class="d-flex flex-wrap">
-        <span class="badge bg-primary m-1">{{countryObject.translations['ara']?.common}}</span>
-        <span class="badge bg-primary m-1">{{countryObject.translations['spa']?.common}}</span>
-        <span class="badge bg-primary m-1">{{countryObject.translations['jpn']?.common}}</span>
-        <span class="badge bg-primary m-1">{{countryObject.translations['fra']?.common}}</span>
-        <span class="badge bg-primary m-1">{{countryObject.translations['ita']?.common}}</span>
-        <span class="badge bg-primary m-1">{{countryObject.translations['zho']?.common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['ara'].common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['spa'].common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['jpn'].common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['fra'].common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['ita'].common}}</span>
+        <span class="badge bg-primary m-1">{{countryObject.translations['zho'].common}}</span>
       </div>
     </div>
   </div>
