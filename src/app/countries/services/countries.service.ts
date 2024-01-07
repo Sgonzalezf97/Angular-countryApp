@@ -1,3 +1,4 @@
+import { Region } from './../interfaces/region.type';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, delay, map, of, tap } from 'rxjs';
@@ -35,18 +36,20 @@ export class CountriesService {
     const url=`${this.apiUrl}capital/${query}`;
     return this.getCountriesRequest(url).pipe(
       tap(countries => this.cacheStore.byCapital={term:query,countries:countries})
-    )
-
-    ;
+    );
   }
 
   searchCountry(query:string): Observable<Country[]>{
     const url=`${this.apiUrl}name/${query}`;
-    return this.getCountriesRequest(url);
+    return this.getCountriesRequest(url).pipe(
+      tap(countries => this.cacheStore.byCountries={term:query,countries:countries})
+      );
   }
-  searchRegion(query:string): Observable<Country[]>{
+  searchRegion(query:Region): Observable<Country[]>{
     const url=`${this.apiUrl}region/${query}`;
-    return this.getCountriesRequest(url);
+    return this.getCountriesRequest(url).pipe(
+      tap(countries => this.cacheStore.byRegion={region:query,countries:countries})
+      );
   }
 
 }
